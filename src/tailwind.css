@@ -1,0 +1,401 @@
+@import "tailwindcss";
+
+@theme {
+  --font-default: Pretendard, sans-serif;
+  --font-brand: "Plus Jakarta Sans", sans-serif;
+
+  --color-green-50: #e3fdf0;
+  --color-green-100: #c7fce1;
+  --color-green-200: #a0fbcd;
+  --color-green-300: #57f3a5;
+  --color-green-400: #32e089;
+  --color-green-500: #29c878;
+  --color-green-600: #1ea260;
+  --color-green-700: #0b7b43;
+  --color-green-800: #04532c;
+  --color-green-900: #022e18;
+  --color-blue-50: #e2effd;
+  --color-blue-100: #cfe4fc;
+  --color-blue-200: #a2ccfb;
+  --color-blue-300: #69b0ff;
+  --color-blue-400: #308bee;
+  --color-blue-500: #1271d9;
+  --color-blue-600: #0a55a9;
+  --color-blue-700: #053f7f;
+  --color-blue-800: #053161;
+  --color-blue-900: #02162c;
+  --color-apricot-50: #ffeedf;
+  --color-apricot-100: #fcdfc5;
+  --color-apricot-200: #fbcda2;
+  --color-apricot-300: #ff9e44;
+  --color-apricot-400: #f8861c;
+  --color-apricot-500: #dc710e;
+  --color-apricot-600: #a9570a;
+  --color-apricot-700: #7e4005;
+  --color-apricot-800: #592d03;
+  --color-apricot-900: #401f00;
+  --color-pink-50: #ffeff7;
+  --color-pink-100: #fdcee7;
+  --color-pink-200: #fba2d2;
+  --color-pink-300: #ff6dbb;
+  --color-pink-400: #fb369f;
+  --color-pink-500: #dc0e7c;
+  --color-pink-600: #a90a5f;
+  --color-pink-700: #7e0546;
+  --color-pink-800: #590331;
+  --color-pink-900: #400022;
+  --color-yellow-50: #fdfee4;
+  --color-yellow-100: #fafcc1;
+  --color-yellow-200: #f5f985;
+  --color-yellow-300: #e6ec3f;
+  --color-yellow-400: #c7ce06;
+  --color-yellow-500: #969b06;
+  --color-yellow-600: #6f7304;
+  --color-yellow-700: #4a4c02;
+  --color-yellow-800: #2d2e00;
+  --color-yellow-900: #1c1d00;
+  --color-purple-50: #f6effe;
+  --color-purple-100: #e9d9fd;
+  --color-purple-200: #d2b2fc;
+  --color-purple-300: #b988fa;
+  --color-purple-400: #974df9;
+  --color-purple-500: #7c2be5;
+  --color-purple-600: #5412aa;
+  --color-purple-700: #3a0a7a;
+  --color-purple-800: #260651;
+  --color-purple-900: #18072e;
+  --color-grey-50: #fafafb;
+  --color-grey-100: #f4f3f5;
+  --color-grey-200: #d8d7dc;
+  --color-grey-300: #bbb9c1;
+  --color-grey-400: #9794a0;
+  --color-grey-500: #777383;
+  --color-grey-600: #605c6e;
+  --color-grey-700: #4a455a;
+  --color-grey-800: #312b43;
+  --color-grey-900: #1c1630;
+  --color-grey-opacity-50: rgb(28 22 48 / 2%);
+  --color-grey-opacity-100: rgb(28 22 48 / 5%);
+  --color-grey-opacity-200: rgb(28 22 48 / 17%);
+  --color-grey-opacity-300: rgb(28 22 48 / 30%);
+  --color-grey-opacity-400: rgb(28 22 48 / 46%);
+  --color-grey-opacity-500: rgb(28 22 48 / 60%);
+  --color-grey-opacity-600: rgb(28 22 48 / 70%);
+  --color-grey-opacity-700: rgb(28 22 48 / 80%);
+  --color-grey-opacity-800: rgb(28 22 48 / 91%);
+  --color-grey-opacity-900: #1c1630;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-danger-50: #fef0eb;
+  --color-danger-100: #fbcfc5;
+  --color-danger-200: #de3410;
+  --color-warning-50: #fff4dc;
+  --color-warning-100: #ffe0a2;
+  --color-warning-200: #ffb210;
+  --color-success-50: #eaf7eb;
+  --color-success-100: #a9dbb4;
+  --color-success-200: #218737;
+  --color-information-50: #e7f5fe;
+  --color-information-100: #9ed3fa;
+  --color-information-200: #086bb2;
+  --color-divider-default: var(--color-grey-opacity-100);
+  --color-icon-default: var(--color-grey-opacity-900);
+  --color-icon-additional: var(--color-grey-opacity-600);
+  --color-icon-disable: var(--color-grey-opacity-300);
+  --color-icon-white: var(--color-white);
+  --color-text-default: var(--color-grey-opacity-900);
+  --color-text-additional: var(--color-grey-opacity-600);
+  --color-text-disable: var(--color-grey-opacity-300);
+  --color-text-white: var(--color-white);
+  --color-background-white: var(--color-white);
+
+  --spacing-margin-xsmall: 1rem;
+  --spacing-margin-small: 1.25rem;
+  --spacing-margin-medium: 1.5rem;
+  --spacing-margin-icon-xsmall: 0.75rem;
+  --spacing-margin-icon-small: 1rem;
+  --spacing-margin-icon-medium: 1.25rem;
+  --spacing-padding-xsmall: 0.75rem;
+  --spacing-padding-small: 1rem;
+  --spacing-padding-medium: 1.25rem;
+
+  --radius-xsmall: 0.25rem;
+  --radius-small: 0.5rem;
+  --radius-medium: 1.5rem;
+  --radius-large: 2rem;
+  --radius-full: 9999px;
+}
+
+@utility gap-small {
+  gap: 0.5rem;
+}
+
+@utility gap-medium {
+  gap: 0.75rem;
+}
+
+@layer utilities {
+  .default-caption-large {
+    font-family: var(--font-default);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    line-height: 0.9375rem;
+    letter-spacing: -0.006875rem;
+  }
+
+  .default-label-medium {
+    font-family: var(--font-default);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+    letter-spacing: -0.0075rem;
+  }
+
+  .default-label-large {
+    font-family: var(--font-default);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    letter-spacing: -0.00875rem;
+  }
+
+  .default-body-strong-small {
+    font-family: var(--font-default);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.25rem;
+    letter-spacing: -0.008125rem;
+  }
+
+  .default-body-strong-medium {
+    font-family: var(--font-default);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    line-height: 1.375rem;
+    letter-spacing: -0.009375rem;
+  }
+
+  .default-body-strong-large {
+    font-family: var(--font-default);
+    font-size: 1.0625rem;
+    font-weight: 600;
+    line-height: 1.625rem;
+    letter-spacing: -0.010625rem;
+  }
+
+  .default-body-small {
+    font-family: var(--font-default);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: -0.008125rem;
+  }
+
+  .default-body-medium {
+    font-family: var(--font-default);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.375rem;
+    letter-spacing: -0.009375rem;
+  }
+
+  .default-body-large {
+    font-family: var(--font-default);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.625rem;
+    letter-spacing: -0.010625rem;
+  }
+
+  .default-heading-small {
+    font-family: var(--font-default);
+    font-size: 1.375rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: -0.01375rem;
+  }
+
+  .default-heading-medium {
+    font-family: var(--font-default);
+    font-size: 1.5rem;
+    font-weight: 600;
+    line-height: 2rem;
+    letter-spacing: -0.015rem;
+  }
+
+  .default-heading-large {
+    font-family: var(--font-default);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    letter-spacing: -0.0175rem;
+  }
+
+  .default-title-strong-medium {
+    font-family: var(--font-default);
+    font-size: 1.125rem;
+    font-weight: 700;
+    line-height: 1.625rem;
+    letter-spacing: -0.01125rem;
+  }
+
+  .default-title-strong-large {
+    font-family: var(--font-default);
+    font-size: 1.25rem;
+    font-weight: 700;
+    line-height: 1.75rem;
+    letter-spacing: -0.0125rem;
+  }
+
+  .default-title-medium {
+    font-family: var(--font-default);
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.625rem;
+    letter-spacing: -0.01125rem;
+  }
+
+  .default-title-large {
+    font-family: var(--font-default);
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    letter-spacing: -0.0125rem;
+  }
+
+  .default-display {
+    font-family: var(--font-default);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+    letter-spacing: -0.025rem;
+  }
+
+  .brand-caption {
+    font-family: var(--font-brand);
+    font-size: 0.6875rem;
+    font-weight: 400;
+    line-height: 0.9375rem;
+    letter-spacing: -0.006875rem;
+  }
+
+  .brand-label-medium {
+    font-family: var(--font-brand);
+    font-size: 0.75rem;
+    font-weight: 500;
+    line-height: 1.125rem;
+    letter-spacing: -0.0075rem;
+  }
+
+  .brand-label-large {
+    font-family: var(--font-brand);
+    font-size: 0.875rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    letter-spacing: -0.00875rem;
+  }
+
+  .brand-body-small {
+    font-family: var(--font-brand);
+    font-size: 0.8125rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+    letter-spacing: -0.008125rem;
+  }
+
+  .brand-body-medium {
+    font-family: var(--font-brand);
+    font-size: 0.9375rem;
+    font-weight: 400;
+    line-height: 1.375rem;
+    letter-spacing: -0.009375rem;
+  }
+
+  .brand-body-large {
+    font-family: var(--font-brand);
+    font-size: 1.0625rem;
+    font-weight: 400;
+    line-height: 1.625rem;
+    letter-spacing: -0.010625rem;
+  }
+
+  .brand-body-strong-small {
+    font-family: var(--font-brand);
+    font-size: 0.8125rem;
+    font-weight: 500;
+    line-height: 1.25rem;
+    letter-spacing: -0.008125rem;
+  }
+
+  .brand-body-strong-medium {
+    font-family: var(--font-brand);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.375rem;
+    letter-spacing: -0.009375rem;
+  }
+
+  .brand-body-strong-large {
+    font-family: var(--font-brand);
+    font-size: 1.0625rem;
+    font-weight: 500;
+    line-height: 1.625rem;
+    letter-spacing: -0.010625rem;
+  }
+
+  .brand-title-medium {
+    font-family: var(--font-brand);
+    font-size: 1.125rem;
+    font-weight: 500;
+    line-height: 1.625rem;
+    letter-spacing: -0.01125rem;
+  }
+
+  .brand-title-large {
+    font-family: var(--font-brand);
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.75rem;
+    letter-spacing: -0.0125rem;
+  }
+
+  .brand-title-strong-large {
+    font-family: var(--font-brand);
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.75rem;
+    letter-spacing: -0.0125rem;
+  }
+
+  .brand-heading-medium {
+    font-family: var(--font-brand);
+    font-size: 1.5rem;
+    font-weight: 500;
+    line-height: 2rem;
+    letter-spacing: -0.015rem;
+  }
+
+  .brand-heading-large {
+    font-family: var(--font-brand);
+    font-size: 1.75rem;
+    font-weight: 600;
+    line-height: 2.25rem;
+    letter-spacing: -0.0175rem;
+  }
+
+  .brand-heading-strong-medium {
+    font-family: var(--font-brand);
+    font-size: 1.5rem;
+    font-weight: 700;
+    line-height: 2rem;
+    letter-spacing: -0.015rem;
+  }
+
+  .brand-display {
+    font-family: var(--font-brand);
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 3rem;
+    letter-spacing: -0.025rem;
+  }
+}

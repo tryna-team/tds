@@ -1,0 +1,29 @@
+{
+  "name": "@tryna/tds",
+  "version": "0.0.1",
+  "description": "tryna Design System tokens for Tailwind CSS.",
+  "type": "module",
+  "files": [
+    "src",
+    "resource",
+    "README.md"
+  ],
+  "exports": {
+    "./tailwind.css": "./src/tailwind.css"
+  },
+  "scripts": {
+    "build": "tailwindcss -i ./src/tailwind.css -o ./dist/tailwind.css",
+    "check": "tailwindcss -i ./src/tailwind.css -o /tmp/tryna-tds.css"
+  },
+  "keywords": [
+    "tryna",
+    "design-system",
+    "tailwindcss",
+    "tokens"
+  ],
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.3.2",
+    "tailwindcss": "^4.3.2"
+  }
+}
