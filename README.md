@@ -60,11 +60,13 @@ Tailwind namespace가 이미 역할을 표현하므로 같은 의미를 반복�
 Figma의 `px` 값은 CSS에서 `rem`으로 변환합니다.
 
 ```txt
+4px  -> 0.25rem
 8px  -> 0.5rem
 12px -> 0.75rem
 16px -> 1rem
 20px -> 1.25rem
 24px -> 1.5rem
+32px -> 2rem
 ```
 
 `Radius.Full`처럼 무한 radius 의미가 있는 값은 `9999px`를 사용합니다.
@@ -87,6 +89,7 @@ purple-50 ~ purple-900
 grey-50 ~ grey-900
 grey-opacity-50 ~ grey-opacity-900
 white
+white-opacity
 black
 ```
 
@@ -95,6 +98,7 @@ black
 ```tsx
 <div className="bg-green-500 text-white" />
 <div className="bg-grey-opacity-100 text-grey-900" />
+<div className="bg-black text-white-opacity" />
 ```
 
 ### System Colors
@@ -143,34 +147,41 @@ background-white
 
 ## Spacing Tokens
 
-spacing은 margin, icon margin, padding으로 구분합니다.
+spacing은 margin과 padding으로 구분합니다. `XX Small`과 `XXSmall`처럼 원본 표기가 다른 경우 CSS에서는 `xxsmall`로 통일합니다.
 
 ```txt
+margin-xxsmall
 margin-xsmall
 margin-small
 margin-medium
-margin-icon-xsmall
-margin-icon-small
-margin-icon-medium
+margin-large
+padding-xxsmall
 padding-xsmall
 padding-small
 padding-medium
+padding-large
+padding-xlarge
 ```
 
 사용 예:
 
 ```tsx
-<section className="px-margin-small py-padding-medium" />
+<section className="px-margin-small py-padding-large" />
 <button className="px-padding-small py-padding-xsmall" />
 ```
+
+기존 `MarginSide.WithIcon` 토큰은 원본에서 제거되어 `margin-icon-*` 클래스도 더 이상 제공하지 않습니다. 또한 기존 margin, padding 클래스의 값이 새 scale에 맞게 변경되었으므로 업데이트 시 레이아웃을 확인해야 합니다.
 
 ## Gap Tokens
 
 `gap`은 Tailwind theme namespace가 아니라 별도 utility로 제공합니다.
 
 ```txt
+gap-xsmall
 gap-small
 gap-medium
+gap-large
+gap-xlarge
 ```
 
 사용 예:
@@ -184,11 +195,11 @@ gap-medium
 radius는 Tailwind의 `rounded-*` utility로 사용합니다.
 
 ```txt
-rounded-xsmall
-rounded-small
-rounded-medium
-rounded-large
-rounded-full
+rounded-xsmall  (4px)
+rounded-small   (8px)
+rounded-medium  (16px)
+rounded-large   (24px)
+rounded-full    (9999px)
 ```
 
 사용 예:
@@ -199,7 +210,7 @@ rounded-full
 
 ## Typography Tokens
 
-Typography는 Figma의 최상위 그룹인 `Default`와 `Brand`를 class prefix로 사용합니다.
+기본 Typography는 Figma의 최상위 그룹인 `Default`와 `Brand`를 class prefix로 사용합니다. Default는 `Pretendard Variable`, Brand는 `Plus Jakarta Sans`를 사용합니다.
 
 ### Default
 
@@ -242,6 +253,33 @@ brand-heading-medium
 brand-heading-large
 brand-heading-strong-medium
 brand-display
+```
+
+### Landing
+
+Landing Typography 원본은 font size만 정의하며 Mobile과 Desktop mode를 별도 토큰으로 제공합니다. font family, weight, line height, letter spacing은 포함하지 않습니다.
+
+```txt
+text-landing-mobile-display
+text-landing-mobile-caption
+text-landing-mobile-heading-01
+text-landing-mobile-heading-02
+text-landing-mobile-body-01
+text-landing-mobile-body-02
+text-landing-desktop-display
+text-landing-desktop-caption
+text-landing-desktop-heading-01
+text-landing-desktop-heading-02
+text-landing-desktop-body-01
+text-landing-desktop-body-02
+```
+
+원본에는 mode 전환 breakpoint가 없으므로 패키지가 특정 breakpoint를 강제하지 않습니다. 필요한 Tailwind variant를 조합합니다. 아래 `md`는 사용 예시입니다.
+
+```tsx
+<h1 className="font-brand font-bold text-landing-mobile-display md:text-landing-desktop-display">
+  tryna
+</h1>
 ```
 
 사용 예:
@@ -324,6 +362,8 @@ Figma에서 추출한 원본 토큰은 아래 파일에 있습니다.
 resource/Default.tokens.json
 resource/Mode 1.tokens.json
 resource/Mode 1.tokens 2.json
+resource/Landing Typography/Desktop.tokens.json
+resource/Landing Typography/Mobile.tokens.json
 ```
 
 원본 토큰은 직접 수정하지 않고, 변환 스크립트 또는 빌드 산출물에서 CSS 토큰으로 변환하는 방식을 권장합니다.

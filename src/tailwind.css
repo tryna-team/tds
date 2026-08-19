@@ -4,6 +4,19 @@
   --font-default: "Pretendard Variable", sans-serif;
   --font-brand: "Plus Jakarta Sans", sans-serif;
 
+  --text-landing-mobile-display: 3rem;
+  --text-landing-mobile-caption: 1.25rem;
+  --text-landing-mobile-heading-01: 2.5rem;
+  --text-landing-mobile-heading-02: 1.5rem;
+  --text-landing-mobile-body-01: 1.0625rem;
+  --text-landing-mobile-body-02: 1rem;
+  --text-landing-desktop-display: 6.25rem;
+  --text-landing-desktop-caption: 1.5rem;
+  --text-landing-desktop-heading-01: 3.5rem;
+  --text-landing-desktop-heading-02: 2.5rem;
+  --text-landing-desktop-body-01: 1.25rem;
+  --text-landing-desktop-body-02: 1rem;
+
   --color-green-50: #e3fdf0;
   --color-green-100: #c7fce1;
   --color-green-200: #a0fbcd;
@@ -85,6 +98,7 @@
   --color-grey-opacity-800: rgb(28 22 48 / 91%);
   --color-grey-opacity-900: #1c1630;
   --color-white: #ffffff;
+  --color-white-opacity: rgb(255 255 255 / 40%);
   --color-black: #000000;
   --color-danger-50: #ffebeb;
   --color-danger-100: #ffcdce;
@@ -109,21 +123,27 @@
   --color-text-white: var(--color-white);
   --color-background-white: var(--color-white);
 
-  --spacing-margin-xsmall: 1rem;
-  --spacing-margin-small: 1.25rem;
-  --spacing-margin-medium: 1.5rem;
-  --spacing-margin-icon-xsmall: 0.75rem;
-  --spacing-margin-icon-small: 1rem;
-  --spacing-margin-icon-medium: 1.25rem;
-  --spacing-padding-xsmall: 0.75rem;
-  --spacing-padding-small: 1rem;
-  --spacing-padding-medium: 1.25rem;
+  --spacing-margin-xxsmall: 0.5rem;
+  --spacing-margin-xsmall: 0.75rem;
+  --spacing-margin-small: 1rem;
+  --spacing-margin-medium: 1.25rem;
+  --spacing-margin-large: 1.5rem;
+  --spacing-padding-xxsmall: 0.25rem;
+  --spacing-padding-xsmall: 0.5rem;
+  --spacing-padding-small: 0.75rem;
+  --spacing-padding-medium: 1rem;
+  --spacing-padding-large: 1.25rem;
+  --spacing-padding-xlarge: 1.5rem;
 
   --radius-xsmall: 0.25rem;
   --radius-small: 0.5rem;
-  --radius-medium: 1.5rem;
-  --radius-large: 2rem;
+  --radius-medium: 1rem;
+  --radius-large: 1.5rem;
   --radius-full: 9999px;
+}
+
+@utility gap-xsmall {
+  gap: 0.25rem;
 }
 
 @utility gap-small {
@@ -132,6 +152,14 @@
 
 @utility gap-medium {
   gap: 0.75rem;
+}
+
+@utility gap-large {
+  gap: 1rem;
+}
+
+@utility gap-xlarge {
+  gap: 2rem;
 }
 
 @layer utilities {
