@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 @theme {
-  --font-default: Pretendard, sans-serif;
+  --font-default: "Pretendard Variable", sans-serif;
   --font-brand: "Plus Jakarta Sans", sans-serif;
 
   --color-green-50: #e3fdf0;
