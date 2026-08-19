@@ -1,6 +1,6 @@
 {
   "name": "@tryna/tds",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "description": "tryna Design System tokens for Tailwind CSS.",
   "type": "module",
   "files": [
