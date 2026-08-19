@@ -3,7 +3,7 @@
     "FontFamily": {
       "Default": {
         "$type": "string",
-        "$value": "Pretendard",
+        "$value": "Pretendard Variable",
         "$extensions": {
           "com.figma.variableId": "VariableID:1016:3114",
           "com.figma.scopes": [
